@@ -8,8 +8,6 @@ npm install
 
 ### Как запустить:
 
-В папке diary_web_app не закрывая терминалы:
-
 ```bash
-npm start
+npm run dev
 ```
