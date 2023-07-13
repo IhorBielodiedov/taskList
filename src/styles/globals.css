@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Стиль для кнопок-фильтров */
+.filter-btn {
+  @apply rounded-[5px] px-[15px] py-[5px];
+}
