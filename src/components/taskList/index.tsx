@@ -1,16 +1,19 @@
-import { ChangeEvent, FormEvent, FunctionComponent, useState } from "react";
+import type { ChangeEvent, FormEvent, FunctionComponent } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState, TaskSliceState } from "types/todoSliceTypes";
+import type { RootState } from "types/todoSliceTypes";
 import TaskItem from "../taskItem";
 import { addTask, changeTheme } from "~/store/slices/taskSlice";
 import { generateComponents } from "~/utils/helpers";
 
 const TaskList: FunctionComponent = () => {
   const { tasks, isDarkTheme } = useSelector(
-    (state: RootState) => state.taskSlice as TaskSliceState
+    (state: RootState) => state.taskSlice
   );
-  const [input, setInput] = useState("");
-  const [showDoneTasks, setShowDoneTasks] = useState("all");
+  const [input, setInput] = useState<string>("");
+  const [showDoneTasks, setShowDoneTasks] = useState<
+    "all" | "done" | "notDone"
+  >("all");
 
   const dispatch = useDispatch();
 
@@ -26,7 +29,7 @@ const TaskList: FunctionComponent = () => {
   };
 
   //Хендлер изменения фильтра
-  const handleTasksFilterChange = (filter: string) => {
+  const handleTasksFilterChange = (filter: "all" | "done" | "notDone") => {
     setShowDoneTasks(filter);
   };
 

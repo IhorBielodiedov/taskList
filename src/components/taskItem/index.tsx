@@ -1,6 +1,6 @@
-import { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState, TaskSliceState } from "types/todoSliceTypes";
+import type { RootState } from "types/todoSliceTypes";
 import { doneTask, removeTask } from "~/store/slices/taskSlice";
 
 //Компонент-задача
@@ -10,9 +10,7 @@ type TaskItemProps = {
 };
 
 const TaskItem: FunctionComponent<TaskItemProps> = ({ data }) => {
-  const { isDarkTheme } = useSelector(
-    (state: RootState) => state.taskSlice as TaskSliceState
-  );
+  const { isDarkTheme } = useSelector((state: RootState) => state.taskSlice);
   const dispatch = useDispatch();
 
   //Хендлер удаления задачи

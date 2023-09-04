@@ -14,20 +14,11 @@ export type TaskSliceAction<T = any> = {
   payload: T;
 };
 
-export type TaskSliceReducer = (
-  state: TaskSliceState,
-  action: TaskSliceAction
-) => TaskSliceState;
-
 export type TaskSliceActions = {
   addTask: TaskSliceAction<string>;
   removeTask: TaskSliceAction<number>;
 };
 
-export type TaskSlice = {
-  reducer: TaskSliceReducer;
-  actions: TaskSliceActions;
-};
 export type RootState = {
   taskSlice: TaskSliceState;
 };

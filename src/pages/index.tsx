@@ -1,13 +1,10 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useSelector } from "react-redux";
-import { RootState, TaskSliceState } from "types/todoSliceTypes";
+import type { RootState } from "types/todoSliceTypes";
 import TaskList from "~/components/taskList";
 
 export default function Home() {
-  const { isDarkTheme } = useSelector(
-    (state: RootState) => state.taskSlice as TaskSliceState
-  );
+  const { isDarkTheme } = useSelector((state: RootState) => state.taskSlice);
   return (
     <>
       <Head>

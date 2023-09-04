@@ -1,5 +1,6 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { TaskSliceState, TaskItem } from "types/todoSliceTypes";
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import type { TaskSliceState, TaskItem } from "types/todoSliceTypes";
 
 //Слайс стора для хранения данных по задачам
 
